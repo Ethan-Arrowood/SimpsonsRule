@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculus</title>
+	<style>
+	body, html, input {
+        font-family: sans-serif;
+        font-size: 11pt;
+    }
+	form {
+		padding: 10px;
+		border: 3px solid lightgrey;
+		border-radius: 5px;
+		width: 250px;
+		text-align: center;
+	}
+	input {
+		margin: 5px;
+	}
+	#result {
+		border: 1px solid lightgrey;
+		border-radius: 5px;
+		width: auto;
+		height: auto;
+		display: inline;
+		padding: 5px;
+		margin-top: 15px;
+	}
+	</style>
+</head>
+<body>
+	<h2> Integral Calculator - Modeling Simpson's Rule </h2>
+	<h4>Use paranthesis as needed. To square use '^'. <br> To square root use 'sqrt()'. <br> Trig functions are: sin(), cos(), tan(), csc(), sec(), and cot(). <br> You can also use 'pi', 'log(x, base)', 'e'</h4>
+	<form id="integral" style="margin: 10px">
+		Lower: <input type="text" name="lowerLimit" value="0">
+		<br>
+		Upper: <input type="text" name="upperLimit" value="1">
+		<br>
+		Function: <input type="text" id="eq" name="function" value="4*sqrt(1-x^2)">
+		<br>
+		<input type="submit" value="Submit">
+	</form>
+	Result ≈
+	<div style="border: 1px solid lightgrey; border-radius: 5px; width: auto; height: auto; display: inline; padding: 5px;" id="result">
+	</div>
+
+	<div id="plot"></div>
+
+	<p>
+  		Plot library: <a href="https://github.com/maurizzzio/function-plot">https://github.com/maurizzzio/function-plot</a>
+	</p>
+
+  <!-- Load dependencies first-->
+	<script src="jquery.js"></script>
+	<script src="math.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script src="https://wzrd.in/standalone/function-plot@1.14.0"></script>
+
+  <!-- My script -->
+	<script src="script.js"></script>
+</body>
+</html>
